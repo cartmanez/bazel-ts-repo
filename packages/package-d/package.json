@@ -1,0 +1,7 @@
+{
+  "name": "@my-scope/package-d",
+  "version": "1.0.2",
+  "dependencies": {
+    "@my-scope/package-c": "1.0.2"
+  }
+}

@@ -1,0 +1,24 @@
+package(default_visibility=["//visibility:public"])
+load("@npm//@bazel/typescript:index.bzl", "ts_project", "ts_config")
+load("@build_bazel_rules_nodejs//:index.bzl", "npm_package_bin", "nodejs_binary", "js_library")
+load("@npm//typescript:index.bzl", "tsc")
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.json",
+)
+
+ts_project(
+    name = "dist",
+    srcs = glob(["src/**/*.ts"]),
+    tsconfig = ":tsconfig",
+    declaration_map = True,
+    resolve_json_module = True,
+    source_map = True,
+    declaration = True,
+    root_dir = "src",
+    out_dir = "dist",
+    deps = [
+        '//packages/package-c'
+    ],
+)

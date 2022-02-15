@@ -1,0 +1,17 @@
+{
+  "name": "@my-scope/demo-ts-project-with-bazel",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@bazel/typescript": "5.0.1",
+    "typescript": "3.8.3"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0 <15.0.0"
+  }
+}
